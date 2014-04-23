@@ -1,0 +1,5 @@
+ADD R2, R2, #-1
+ADD R3, R3, #-1
+ADD R0, R0, #0001
+ADD R1, R1, #0001
+CMN R0, #-1

@@ -1,0 +1,169 @@
+C:/Users/Ganesh/Desktop/ARM_Processor/ADDGEN.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ADDGEN.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ADDGEN
+
+Top level modules:
+	ADDGEN
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUX2.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUX2.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX2
+
+Top level modules:
+	MUX2
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/I_Cache.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/I_Cache.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module I_Cache
+
+Top level modules:
+	I_Cache
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MULT_DEC.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MULT_DEC.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT_DEC
+-- Compiling module hot_code
+-- Compiling module Pri_Enc
+
+Top level modules:
+	MULT_DEC
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MemROM
+
+Top level modules:
+	MemROM
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SFTUnit
+-- Compiling module barrel32
+
+Top level modules:
+	SFTUnit
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/Reg_File.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/Reg_File.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v {2 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX4
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(15): [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(16): [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(17): [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(18): [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	MUX4
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/CPSRREG.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/CPSRREG.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CPSRREG
+
+Top level modules:
+	CPSRREG
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module WBROM
+
+Top level modules:
+	WBROM
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/ARM7.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ARM7.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ARM7
+
+Top level modules:
+	ARM7
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/ExeROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ExeROM.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ExeROM
+
+Top level modules:
+	ExeROM
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG2.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG2.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module REG2
+
+Top level modules:
+	REG2
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/DecROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/DecROM.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DecROM
+
+Top level modules:
+	DecROM
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/ALU.V {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ALU.V
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit_TB.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit_TB.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SFTUnit_TB
+
+Top level modules:
+	SFTUnit_TB
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/CondChk.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/CondChk.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CondChk
+
+Top level modules:
+	CondChk
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG32.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG32.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module REG32
+
+Top level modules:
+	REG32
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUL32.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUL32.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUL32
+
+Top level modules:
+	MUL32
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ARM7_TB
+
+Top level modules:
+	ARM7_TB
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/DATA_Cache.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/DATA_Cache.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DATA_Cache
+
+Top level modules:
+	DATA_Cache
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/INT_Decode.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/INT_Decode.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module I_Decode
+
+Top level modules:
+	I_Decode
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module Counter2
+
+Top level modules:
+	Counter2
+
+} {} {}}

@@ -1,0 +1,127 @@
+`timescale 10ps / 1ps
+// SFTUnit(INA(),.INB(),.OPCODE(),.Cin(),.OUT(),.Cout());
+module SFTUnit(INA,INB,OPCODE,Cin,OUT,Cout);
+
+input signed [31:0] INA;
+input [31:0] INB;
+input [31:0] OPCODE;
+input Cin;
+output reg [31:0] OUT;
+output reg Cout;
+
+reg [31:0]Data_IN;
+wire [31:0]Data_OUT;
+reg [4:0]Sel;
+reg [4:0]OPCODE_temp;
+wire [4:0]OPCODE_Decode;
+
+
+barrel32 Shifter(.Data_IN(Data_IN),.Sel(Sel),.Data_OUT(Data_OUT));
+I_Decode Shift_I_Decode(.OPCODE(OPCODE),.Dec(OPCODE_Decode));
+
+initial
+	$monitor("ShiftUnit:%t\t%h\t%h\t%h\t%h\t%h\t%h", $time, INA, INB,OPCODE_Decode,OPCODE,OPCODE_temp,OUT);
+always@(OPCODE_Decode,OPCODE)
+	begin
+	case(OPCODE_Decode)
+		1:OPCODE_temp = 4'B1001;
+		2:OPCODE_temp = 4'B1001;
+		7:	begin
+			if (OPCODE[27:25] == 3'b001)			//IF IMMIDIATE DATA
+				OPCODE_temp = 4'B1000;
+			else									//Shifter Operands
+				OPCODE_temp = OPCODE[7:4];
+			end
+		default:OPCODE_temp = 4'B1111;
+	endcase
+	end
+
+
+
+always@(OPCODE_temp)
+	begin
+		casex (OPCODE_temp)
+			4'Bx000: {Cout,OUT} = INA<<OPCODE[11:7];
+			4'B0001: {Cout,OUT} = INA<<INB;
+			4'Bx010: {OUT,Cout} = INA>>OPCODE[11:7];
+			4'B0011: {OUT,Cout} = INA>>INB;
+			4'Bx100: {OUT,Cout} = INA>>>OPCODE[11:7];
+			4'B0101: {OUT,Cout} = INA>>>INB[4:0];
+			4'Bx110: begin
+						if(OPCODE[11:7] == 5'b00000)
+							begin
+								Data_IN 	= INA;
+								Sel 		= 5'b00001;
+								OUT[30:0] 	= Data_OUT[30:0];
+								Cout 		= Data_OUT[31];
+								OUT[31]  	= Cin;
+							end
+						else
+							begin
+								Data_IN <= INA;
+								Sel  = OPCODE[11:7];
+								Cout = Data_OUT[31];
+								OUT  = Data_OUT;
+							end
+						end
+			4'B1000:  begin
+						Data_IN <= {24'h000000,OPCODE[7:0]};
+						Sel  = {OPCODE[11:8],1'b0};
+						Cout = Data_OUT[31];
+						OUT  = Data_OUT;	
+					end
+			4'B0111: begin 
+						Data_IN <= INA[7:0];
+						Sel  = INB[4:0];
+						Cout = Data_OUT[31];
+						OUT  = Data_OUT;
+					 end
+			
+			4'B1001: OUT = OPCODE[23:0]<<2;
+			4'B1010: OUT = INA;
+			4'B1111: OUT = INA;
+			default: OUT = INA;
+			endcase
+			
+	end
+		
+endmodule
+
+
+
+
+module barrel32(Data_IN, Sel, Data_OUT);
+
+input   [31:0]    Data_IN;
+input   [4:0]     Sel;
+output  [31:0]    Data_OUT;
+
+reg     [31:0]    Lvl1 = 0, Lvl2 = 0, Lvl3 = 0; // not really registers, Verilog compliance
+wire    [63:0]    Stage1, Stage2;     // wires to simplify FOR loops
+integer           i, j;               // loop variables
+
+always @(*) Lvl1 <= Sel[4] ? {Data_IN[15:0], Data_IN[31:16]} : Data_IN; // rotate {0 | 16} bits
+
+assign Stage1 = {Lvl1, Lvl1};    // wraparound a la Verilog
+
+always @(*)    // rotate {0 | 4 | 8 | 12} bits
+  case (Sel[3:2])
+     2'b00:  Lvl2 <= Stage1[31:0];       // rotate by 0
+     2'b01:  for (i=0; i<=31; i=i+1)  Lvl2[i] <= Stage1[i+4];  // rotate by 4
+     2'b10:  for (i=0; i<=31; i=i+1)  Lvl2[i] <= Stage1[i+8];  // rotate by 8
+     2'b11:  for (i=0; i<=31; i=i+1)  Lvl2[i] <= Stage1[i+12]; // rotate by 12
+  endcase
+
+assign Stage2 = {Lvl2, Lvl2};    // wraparound a la Verilog
+
+always @(*)    // rotate {0 | 1 | 2 | 3} bits
+  case (Sel[1:0])
+     2'b00:  Lvl3 <= Stage2[31:0];       // rotate by 0
+     2'b01:  for (j=0; j<=31; j=j+1)  Lvl3[j] <= Stage2[j+1]; // rotate by 1
+     2'b10:  for (j=0; j<=31; j=j+1)  Lvl3[j] <= Stage2[j+2]; // rotate by 2
+     2'b11:  for (j=0; j<=31; j=j+1)  Lvl3[j] <= Stage2[j+3]; // rotate by 3
+  endcase
+
+assign Data_OUT = Lvl3;
+
+endmodule

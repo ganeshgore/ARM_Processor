@@ -1,0 +1,414 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Ganesh\Desktop\ARM_Processor
+T_opt
+V0FR=6kVdz0V8f_V0eL2h=0
+04 7 4 work ARM7_TB fast 0
+=14-00ff85375aaa-53417bba-32e-7d34
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+Z2 OE;O;6.5;42
+T_opt1
+VMF3M:dhX=YQBlW=FezalE1
+04 7 4 work Pri_Enc fast 0
+=3-00ff85375aaa-53416635-2e1-6c74
+R1
+n@_opt1
+R2
+T_opt2
+Vi?M>?6P<g]mTB<Q>AS<[>0
+04 8 4 work MULT_DEC fast 0
+=17-00ff85375aaa-53417665-5b-7cd0
+R1
+n@_opt2
+R2
+vADDGEN
+IdL?82Sel5PaTG8:5]H3Ek3
+VTcQY:AH6K`n8[OTM]YB<`1
+w1396775842
+8C:/Users/Ganesh/Desktop/ARM_Processor/ADDGEN.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/ADDGEN.v
+L0 3
+Z3 OE;L;6.5;42
+r1
+31
+Z4 !s102 -nocovercells
+Z5 o-work work -nocovercells -L mtiAvm -L mtiOvm -L mtiUPF
+n@a@d@d@g@e@n
+!s100 aoNa=O1LYe46M;P:CSODD1
+!s85 0
+vALU
+IL20=k7SP:DIDB1Jg`YVNL1
+VZE6f<C=B:Rgzda]o<DHga2
+w1396768983
+8C:/Users/Ganesh/Desktop/ARM_Processor/ALU.V
+FC:/Users/Ganesh/Desktop/ARM_Processor/ALU.V
+L0 3
+R3
+r1
+31
+R4
+R5
+n@a@l@u
+!s100 n<fV`gTe:=>E=DNjh_^;D2
+!s85 0
+vARM7
+IimB4<V2AGFKf@e6JS8zMN1
+VMSD^z?g^Ll3z1YL45GGea2
+w1396800432
+8C:/Users/Ganesh/Desktop/ARM_Processor/ARM7.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/ARM7.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@a@r@m7
+!s100 Pik52KC[KD3I2QSb`N8g?0
+!s85 0
+vARM7_TB
+I0YAOO0iiG];YE3FLf06mK2
+Vi=]m1^SZaOI43ZR`3SK[k0
+w1396800068
+8C:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@a@r@m7_@t@b
+!s100 _e9S7mOikI84:GjVeL9W70
+!s85 0
+vbarrel32
+I<QkHEm1=IfCb?L;9ASG>H3
+V]DF318MKk6i]QCiCg4GM]3
+Z6 w1396775727
+Z7 8C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit.v
+Z8 FC:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit.v
+L0 87
+R3
+r1
+31
+R4
+R5
+!s100 ckCeVhhKEfl3VcNIhS_R00
+!s85 0
+vCondChk
+IfVNZ6_mYc`<of_?UKN>c<2
+VO:RAVhTQI?5<fi<o`B7gW0
+w1396770607
+8C:/Users/Ganesh/Desktop/ARM_Processor/CondChk.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/CondChk.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@cond@chk
+!s100 ak5VNY;_Gg@HQ_gk_7oWA0
+!s85 0
+vCounter2
+I^QWz[9U0Lhl_UANkC@?UZ0
+Vn1JK7ofb_`4R>X:`8k?1A1
+w1396800216
+8C:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@counter2
+!s100 fW8G=lOQ>kY7[_^ZE9oA[0
+!s85 0
+vCPSRREG
+InK;IC@ZcMPLX4]mdQoZ1R0
+V>fRmYPJDPEU[7[<TTJ;KV1
+w1396769590
+8C:/Users/Ganesh/Desktop/ARM_Processor/CPSRREG.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/CPSRREG.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@c@p@s@r@r@e@g
+!s100 40CXeS0>ehGnJ=IAVjC0`3
+!s85 0
+vDATA_Cache
+IGzW8R8K`;6D2`d[OKEcG23
+VH?LEdD?@48=M<9MLd6ZMj1
+w1396800267
+8C:/Users/Ganesh/Desktop/ARM_Processor/DATA_Cache.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/DATA_Cache.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@d@a@t@a_@cache
+!s100 I3^kaDfnN6hf[]Lfi@2@R1
+!s85 0
+vDecROM
+IaX0W9nlOncY4OCmk]ZKz<2
+VbO=`JC=?KRRh7>HJY@Q@81
+w1396785962
+8C:/Users/Ganesh/Desktop/ARM_Processor/DecROM.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/DecROM.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@dec@r@o@m
+!s100 CIaiWB``5OmVioEILCzYI3
+!s85 0
+vExeROM
+IinXUIJ:^^58IkfLD^mQ`T2
+V`86<oR5feCLhH3CC@W8Q[2
+w1396786327
+8C:/Users/Ganesh/Desktop/ARM_Processor/ExeROM.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/ExeROM.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@exe@r@o@m
+!s100 mog:YnIl;AQA9?P;nb@W00
+!s85 0
+vhot_code
+!s100 WRl6hQS0COJf>_JeDECL73
+IXcJiCUZ0=jdU0QlAe3aWe0
+V@F@bB]BEUAm_jUU9Xla[h0
+Z9 w1396799069
+Z10 8C:/Users/Ganesh/Desktop/ARM_Processor/MULT_DEC.v
+Z11 FC:/Users/Ganesh/Desktop/ARM_Processor/MULT_DEC.v
+L0 58
+R3
+r1
+!s85 0
+31
+R4
+R5
+vI_Cache
+I2K80haBWK63l>25g^2ZgO0
+VI:Ug[n:<H<@2U9B>EiUal1
+w1396695852
+8C:/Users/Ganesh/Desktop/ARM_Processor/I_Cache.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/I_Cache.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@i_@cache
+!s100 ?>Xd04nD^JCWoDCdWg@712
+!s85 0
+vI_Decode
+InIzTFCb:fiMEJ]m@DGD:a3
+VhPEN03`Cz?doi6S96O[Jb3
+w1396721131
+8C:/Users/Ganesh/Desktop/ARM_Processor/INT_Decode.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/INT_Decode.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@i_@decode
+!s100 Yh8`>1FIa>GjokPdbbX7Z1
+!s85 0
+vMemROM
+InPiGZG14jS>3Y3z6:Am[m1
+V<`KmYIWIC1QNEdnMB4=mZ1
+w1396782612
+8C:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@mem@r@o@m
+!s100 Ulh^e9c0DE[MbF<eOb=Ao1
+!s85 0
+vMUL32
+IhoiC1H:?Vbghl_XZ1k6Sa1
+VbNXN15e[k0F41i44P2=DS2
+w1396608483
+8C:/Users/Ganesh/Desktop/ARM_Processor/MUL32.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/MUL32.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@m@u@l32
+!s100 UT:b1WEi4Za1iim:DTf;f1
+!s85 0
+vMULT_DEC
+!s100 >>YYemn;SMI[OG=i@EXT33
+I`=f_`CmRoV2UX?^6HbPa53
+VCMajDE6SFSIjnYef;J3Ya3
+R9
+R10
+R11
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+n@m@u@l@t_@d@e@c
+vMUX2
+I_bUZdfU7hdUiamNkLPR7;2
+Vo30ZXjBf0Xk[_idQ9aK5]0
+w1396462307
+8C:/Users/Ganesh/Desktop/ARM_Processor/MUX2.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/MUX2.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@m@u@x2
+!s100 POUl>:C]JTcROVd7AmGX;1
+!s85 0
+vMUX4
+ITiS2N@aLSzf1IVN`PDZVW0
+VlPk:;=1jAoOSd5cD@hd>G0
+w1396462303
+8C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@m@u@x4
+!s100 7XK<>hJN6mTQ]<OnJ]D_[1
+!s85 0
+vPri_Enc
+!s100 7Ue;E@VUXl6g2SX]QJ@Jg2
+I1b5iWX5k8J>>=g^1???Vn2
+V3b=OGX7VVNSk^lPjnUOn@2
+R9
+R10
+R11
+L0 87
+R3
+r1
+!s85 0
+31
+R4
+R5
+n@pri_@enc
+vREG2
+IhfJU[Wm]XjY]lS<ml7PLY3
+VM;3eEX^m=PQRAfZn19n>b0
+w1396787283
+8C:/Users/Ganesh/Desktop/ARM_Processor/REG2.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/REG2.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@r@e@g2
+!s100 2haQKPNeV]SgoW2]^P1AK3
+!s85 0
+vREG32
+IMBS]FLNVioPUzA`CKkL?l3
+V;hEQElhf[?[HMh60SVmN81
+w1396733326
+8C:/Users/Ganesh/Desktop/ARM_Processor/REG32.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/REG32.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@r@e@g32
+!s100 4BVLHh75QJIJh8BU1PMEi0
+!s85 0
+vRegFile
+I:z0@CVBRzz2NcAm2UZilm2
+VeQMbFG`UmVX3@7cfJOTjB0
+w1396707296
+8C:/Users/Ganesh/Desktop/ARM_Processor/Reg_File.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/Reg_File.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@reg@file
+!s100 ^TPU531iS6B9ldXC@gFeK3
+!s85 0
+vSFTUnit
+Ic>7TzdP69lkUh^>2IcZmS0
+V^V2Y3Qk2@]fnoPAh_0]QT2
+R6
+R7
+R8
+L0 3
+R3
+r1
+31
+R4
+R5
+n@s@f@t@unit
+!s100 6R<6f=@b^bNfZLkQlNz<V0
+!s85 0
+vSFTUnit_TB
+I9FkS_DWJ0A?J3L`B2Q0@L1
+V8>^972;k3[^<5OWX]OlOe0
+w1396706131
+8C:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit_TB.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/SFTUnit_TB.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@s@f@t@unit_@t@b
+!s100 Ih7;d=aZQel^YZj3O=[H[1
+!s85 0
+vWBROM
+Il4?^G52E2Q689z:QHzeY@2
+V:2LK4:4OLhb:3meN[<MgV3
+w1396799642
+8C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v
+FC:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@w@b@r@o@m
+!s100 OiZ@enNKff0MHcGFmNH5=1
+!s85 0
