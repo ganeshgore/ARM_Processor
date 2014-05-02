@@ -1,3 +1,2 @@
-MOV R0, #0x30
-MOV R1, #0x20
-MUL R2, R0, R1
+MOV R0, #0x00
+

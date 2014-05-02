@@ -25,7 +25,7 @@ wire [3:0] Decode;
 
 I_Decode Shift_I_Decode(.OPCODE(OPCODE),.Dec(Decode));
 
-always@(Decode)
+always@(Decode,OPCODE)
 	begin
 	case(Decode)
 		1:
@@ -34,9 +34,16 @@ always@(Decode)
 					OP_temp  = 4'B1101;
 				else
 					OP_temp = 4'B0100;
-			end		
+			end	
+		2:
+			begin
+				if(OPCODE[21] == 1'b0)
+					OP_temp  = 4'B1101;
+				else
+					OP_temp = 4'B0101;
+			end	
 		7:OP_temp = OPCODE[24:21];
-		11:OP_temp = 4'B1101;
+		11:OP_temp = OPCODE[24:21];
 		default:OP_temp=3'b000;
 	endcase
 	end

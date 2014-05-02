@@ -4,6 +4,7 @@ module REG32(clk,rst,load,IN, OUT);
 
 input wire clk;input wire rst;input wire load;input wire [31:0]IN;output reg [31:0]OUT;
 
+
 always@(posedge clk)
 begin
 	if(rst == 1)

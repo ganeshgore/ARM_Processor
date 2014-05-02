@@ -1,0 +1,29 @@
+//Multiply LONG TestBench
+MOV	R0, #0x00000000
+MOV	R1, #0x10000000
+MOV	R2, #0x0FF
+ORR R2, R2, R2, LSL #8
+ORR R2, R2, R2, LSL #15
+MOV	R3, #0x02
+UMLAL R1, R0, R2 , R3
+
+
+
+
+/// Word Store TestCodes
+
+MOV	R1, #0xA2
+MOV	R2, #0x04
+;STR R1, [R2, #4]
+;STR R1, [R2, #4]!
+STR R1, [R2], #4
+
+
+
+/// Word Load TestCodes
+
+MOV	R1, #0xA2
+MOV	R2, #0x08
+;LDR R1, [R2, #4]
+;LDR R1, [R2, #4]!
+LDR R1, [R2], #4

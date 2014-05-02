@@ -39,7 +39,7 @@ always@(OPCODE)
 							Dec = 4'd2; 		//-----------Multiply Long
 						else if(OPCODE[7:4] == 4'b1011 && OPCODE[22] == 1'b1)
 							Dec = 4'd5; 		//-----------Half Word Data Transfer Immidiate 
-						else if(OPCODE[7:4] == 4'b11x1)
+						else if((OPCODE[7:6] == 2'b11)&&(OPCODE[4]==1'b1))
 							Dec = 4'd6; 		//-----------Signed Data Transfer
 						else
 							Dec = 1'b0;

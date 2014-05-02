@@ -1,11 +1,12 @@
 `timescale 10ps / 1ps
 // SFTUnit(INA(),.INB(),.OPCODE(),.Cin(),.OUT(),.Cout());
-module SFTUnit(INA,INB,OPCODE,Cin,OUT,Cout);
+module SFTUnit(INA,INB,OPCODE,Cin,TMP_CR,OUT,Cout);
 
 input signed [31:0] INA;
 input [31:0] INB;
 input signed [31:0] OPCODE;
 input Cin;
+input TMP_CR;
 output reg [31:0] OUT;
 output reg Cout;
 
@@ -20,11 +21,12 @@ barrel32 Shifter(.Data_IN(Data_IN),.Sel(Sel),.Data_OUT(Data_OUT));
 I_Decode Shift_I_Decode(.OPCODE(OPCODE),.Dec(Decode));
 
 
-always@(INA,INB,OPCODE,Cin,Data_OUT,Decode)
+always@(INA,INB,OPCODE,Cin,Data_OUT,Decode,TMP_CR)
 	begin
 		case(Decode)
-		1:OUT = INA;
-		2:OUT = INA;
+		1:{Cout,OUT} = {Cin,INA};
+		2:{Cout,OUT} = {TMP_CR,INA};
+		3:{Cout,OUT} = {Cin,INA};
 		11:
 			begin
 				Data_IN = {24'h000000,OPCODE[7:0]};

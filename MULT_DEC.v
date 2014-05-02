@@ -1,56 +1,68 @@
 `timescale 10ps / 1ps
-// MULT_DEC ----- (.OPCODE(), .Cnt(), .Out() ,.Order());
-module MULT_DEC(OPCODE, Cnt, Out ,Order);
-
+// MULT_DEC ----- (clk(),.rst(),.load(),.OPCODE(),.INC(),.Out(),.Pat_Out(),.NoAdd());
+module MULT_DEC(clk,rst,load,OPCODE, INC, Out ,NoAdd);
+input clk;
+input rst;
+input load;
 input [15:0]OPCODE;
-input [1:0]Cnt;
-input Order;
-output reg [3:0] Out;
-
-wire [3:0]ADD0,ADD1,ADD2,ADD3;
-wire [15:0]hot0,hot1,hot2,hot3;
-wire [15:0]enc_in0,enc_in1,enc_in2,enc_in3;
-
-Pri_Enc  Pri_Enc0(ADD0 ,OPCODE);
-hot_code hot_code0(ADD0,hot0);
-
-Pri_Enc  Pri_Enc1(ADD1,enc_in0);
-hot_code hot_code1(ADD1,hot1);
-
-Pri_Enc  Pri_Enc2(ADD2,enc_in1);
-hot_code hot_code2(ADD2,hot2);
-
-Pri_Enc  Pri_Enc3(ADD3,enc_in2);
-hot_code hot_code3(ADD3,hot3);
-
-assign enc_in0 = OPCODE  & (hot0);
-assign enc_in1 = enc_in0 & (hot1);
-assign enc_in2 = enc_in1 & (hot2);
-assign enc_in3 = enc_in2 & (hot3);
+input INC;
+output [3:0]Out;
+output NoAdd;
 
 
-always@(Cnt,ADD0,ADD1,ADD2,ADD3,Order)
+
+wire [15:0]Pat_Out;
+reg [15:0]flip_OPCODE;
+reg NoAdd_tmp;
+reg NoAdd_seq;
+reg [15:0]Store_Opcode;
+wire [15:0]temp_OPCODE;
+wire [15:0]Pri_In;
+wire [15:0]Pat_out_Reg;
+wire [3:0]reg_add;
+
+integer n;
+
+assign temp_OPCODE = (!NoAdd_tmp) ? OPCODE:Store_Opcode;
+
+
+assign NoAdd = (Pat_Out == 0) ? 1'b0 : NoAdd_seq | load ;
+assign Pri_In = (INC) ? flip_OPCODE:temp_OPCODE;
+assign Out = reg_add;
+assign Pat_Out = Pat_out_Reg&temp_OPCODE;
+
+Pri_Enc  Pri_Enc0 (Pri_In ,reg_add);
+hot_code hot_code0(reg_add,Pat_out_Reg);
+
+
+always@(posedge clk)
+begin
+	if(rst == 1)
+		begin
+		Store_Opcode <= 0;
+		NoAdd_seq <= 0;
+		end
+	else	
 	begin
-	if(Order == 1)
-	begin
-		 case(Cnt)
-		 2'b11:Out = ADD0;
-		 2'b10:Out = ADD1;
-		 2'b01:Out = ADD2;
-		 default:Out = ADD3;
-		 endcase
+		if ((load == 1 )||(Store_Opcode != 0) )
+			Store_Opcode <= Pat_Out;
+	if(load == 1'b1)
+		NoAdd_seq <= 1;
+	else if(load != 1'b1 && (Pat_Out == 0)) 
+		NoAdd_seq <= 0;
 	end
+end
+
+always@(temp_OPCODE,Store_Opcode,temp_OPCODE)
+begin
+	for ( n=0 ; n <= 15 ; n=n+1 ) begin
+	flip_OPCODE[n] <= temp_OPCODE[15-n];
+	end
+	if(Store_Opcode == 0)
+		NoAdd_tmp <= 0;
 	else
-	begin
-		case(Cnt)
-		 2'b11:Out = ADD3;
-		 2'b10:Out = ADD2;
-		 2'b01:Out = ADD1;
-		 default:Out = ADD0;
-		 endcase
-	end
-end 
-
+		NoAdd_tmp <= 1;
+end
 
 endmodule
 
@@ -84,7 +96,7 @@ endmodule
 
 
 
-module Pri_Enc (binary_out ,encoder_in);
+module Pri_Enc (encoder_in,binary_out);
 output [3:0] binary_out ; 
 input [15:0] encoder_in ; 
      
@@ -114,3 +126,56 @@ begin
 end
 
 endmodule  
+
+
+
+module MULT_DEC_TB;
+
+	// Inputs
+	reg clk;
+	reg rst;
+	reg load;
+	reg [15:0]OPCODE;
+	reg INC;
+
+
+	// Outputs
+	wire [3:0]Out;
+	wire  NoAdd;
+	
+	parameter clk_period = 4;
+	
+	MULT_DEC uut (
+		.clk(clk),
+		.rst(rst),
+		.load(load),
+		.OPCODE(OPCODE),
+		.INC(INC),
+		.Out(Out),
+		.NoAdd(NoAdd)
+	);
+
+	
+	initial clk = 0; 
+	always #clk_period clk = ~clk;
+	
+
+	initial begin
+
+		rst <= 1'b1;
+		load <= 1'b0;
+		INC <=	1'b0;
+		OPCODE <= 16'h0054;
+		
+		#(4*clk_period) rst <= 1'b0;
+		#(2*clk_period) load <= 1'b1;
+		#(2*clk_period) load <= 1'b0;
+		#(16*clk_period) 		
+		#(2*clk_period) load <= 1'b1;
+		#(2*clk_period) load <= 1'b0;
+        // #(2*clk_period) OPCODE <= 16'h0000;
+		#1000 $stop;$finish;
+
+	end
+      
+endmodule

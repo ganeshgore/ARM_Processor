@@ -15,7 +15,7 @@ reg [REGFILE_WIDTH-1:0] ra1, ra2,ra3;
 //memory declarations
 // reg [DATA_WIDTH - 1:0] Mem[0:1 << (REGFILE_WIDTH-1)];
 reg [DATA_WIDTH - 1:0] Mem[0:16];
-integer i;
+integer i,file;
 
 //write logic
 always@(posedge clk) begin
@@ -34,7 +34,19 @@ always@(posedge clk) begin
 	end
 end
 
-always@(negedge clk) begin
+
+initial	 
+		file = $fopen ("ReGFileLog.dat", "w");
+	
+always@(posedge clk)
+		begin
+		$fwrite(file,"\t time{%8h}",$time);
+		for(i=0;i<=15;i=i+1)
+			$fwrite(file,"\t RegDat%2d{%8h}",i,Mem[i]);
+		$fwrite(file,"\n");
+		end
+		
+always@(RADD1,RADD2,RADD3) begin
 ra1 <= RADD1;
 ra2 <= RADD2;
 ra3 <= RADD3;

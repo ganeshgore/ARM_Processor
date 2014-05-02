@@ -1,14 +1,16 @@
 `timescale 10ps / 1ps
 // DecROM --- (.OPCODE(),.CntOut());
-module ExeROM(OPCODE,GCnt,CntOut);
+module ExeROM(OPCODE,GCnt,GCnt2,CntOut);
 
-input [1:0] GCnt;
+input GCnt;
+input GCnt2;
 input [31:0] OPCODE;
-output reg [12:0] CntOut;
+output reg [13:0] CntOut;
 wire [3:0] Decode;
 
 
 // Control Out Bit Decription
+// CntOut[13] 	= SIGN_MUL
 // CntOut[12] 	= Br_EN
 // CntOut[11] 	= RD_IN_SEL
 // CntOut[10] 	= MULSFT_EN; 
@@ -21,32 +23,46 @@ wire [3:0] Decode;
 // CntOut[0]   	= LOAD_CPSR; 
 
 
+
 reg [2:0]CntOut_temp;
 
 I_Decode Shift_I_Decode(.OPCODE(OPCODE),.Dec(Decode));
 
-always@(Decode,GCnt)
+always@(Decode,OPCODE,GCnt,GCnt2)
 	begin
 	case(Decode)
 		1:
 			begin
-				if(OPCODE[21] == 1'b0)
-					CntOut  = 13'B0000100000000;
+				if(OPCODE[21] == 1'b1)
+					CntOut  = {OPCODE[20] , 12'b000010100000 , OPCODE[20]};   ///Multiply Short Accumulate
 				else
-					CntOut  = 13'B0000010000000;
+					CntOut  = {OPCODE[20] , 12'b000010100000 , OPCODE[20]};	 ///Multiply Short 
 			end
-		7:CntOut  = {12'B000000000000,OPCODE[20]};
-		8:CntOut  = 13'B0000000000010;
-		9:
+		2: 
 			begin
-				if(GCnt == 2'b11)
-					CntOut  = 13'B0000000000110;
+				if(OPCODE[21] == 1'b1)
+					CntOut  = {OPCODE[20] , 2'b00 , GCnt , 3'b010, !GCnt,  5'b00000 , OPCODE[20]};  /// Multiply Long Accumulate
 				else
-					CntOut  = 13'B0000000001010;
+					CntOut  = {OPCODE[20] , 2'b00 , GCnt, 9'b010100000 , OPCODE[20]}; /// Multiply Long
 			end
-		10:CntOut  = 13'B1000000110010;
-		11:CntOut  = {12'B000000001000,OPCODE[20]};
-		default:CntOut  = 13'B0000000000000; 
+		3:CntOut  = {14'B00100000000000};
+		7:CntOut  = {12'B000000000000,OPCODE[20]};
+		6:begin
+				if(OPCODE[20] == 1'b0)   //Store Instruction
+					CntOut = {11'b00000000000,!(OPCODE[24]|GCnt),2'b10};
+				else  //Load Instriuction
+					CntOut = {11'b00000000000,!(OPCODE[24]|GCnt),2'b10};
+			end
+		8:begin
+				if(OPCODE[20] == 1'b0)   //Store Instruction
+					CntOut = {11'b00000000000,!(OPCODE[24]|GCnt),2'b10};
+				else  //Load Instriuction
+					CntOut = {11'b00000000000,!(OPCODE[24]|GCnt),2'b10};
+			end
+		9:CntOut  = {10'B000100000,GCnt,!GCnt,2'b10};
+		10:CntOut  = 14'B01000000000000;
+		11:CntOut  = {13'B000000000000,OPCODE[20]};
+		default:CntOut  = 14'B0000000000000; 
 	endcase
 	// $display("EXE_DECODE\tInstruction:%h\tDecode:%h", OPCODE, Decode);
 	end

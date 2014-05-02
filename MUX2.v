@@ -1,10 +1,12 @@
 `timescale 10ps / 1ps
+// MUX2 --- ( .SEL(),.IN0(),.IN1(), .OUT() );
 module MUX2( SEL, IN0,IN1, OUT );
 
+parameter size = 32;
 input SEL;
-input [31:0] IN0;
-input [31:0] IN1;
-output reg [31:0] OUT;
+input [size-1:0] IN0;
+input [size-1:0] IN1;
+output reg [size-1:0] OUT;
 
 
 

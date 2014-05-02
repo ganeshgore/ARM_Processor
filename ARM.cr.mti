@@ -24,9 +24,10 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MULT_DEC
 -- Compiling module hot_code
 -- Compiling module Pri_Enc
+-- Compiling module MULT_DEC_TB
 
 Top level modules:
-	MULT_DEC
+	MULT_DEC_TB
 
 } {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MemROM.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -50,13 +51,9 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	RegFile
 
-} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v {2 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MUX4
-** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(15): [RDGN] - Redundant digits in numeric literal.
-** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(16): [RDGN] - Redundant digits in numeric literal.
-** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(17): [RDGN] - Redundant digits in numeric literal.
-** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/MUX4.v(18): [RDGN] - Redundant digits in numeric literal.
 
 Top level modules:
 	MUX4
@@ -68,9 +65,17 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	CPSRREG
 
-} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG1.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG1.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module REG1
+
+Top level modules:
+	REG1
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v {2 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module WBROM
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/WBROM.v(26): [RDGN] - Redundant digits in numeric literal.
 
 Top level modules:
 	WBROM
@@ -124,6 +129,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	CondChk
 
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG4.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG4.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module REG4
+
+Top level modules:
+	REG4
+
 } {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG32.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG32.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module REG32
@@ -137,6 +149,22 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	MUL32
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/REG5.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/REG5.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module REG5
+
+Top level modules:
+	REG5
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/DestADDGen.v {2 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/DestADDGen.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DestADDGen
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/DestADDGen.v(38): [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ganesh/Desktop/ARM_Processor/DestADDGen.v(41): [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	DestADDGen
 
 } {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/ARM7_TB.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -158,6 +186,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	I_Decode
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/FWD_Unit.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/FWD_Unit.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FWD_UNIT
+
+Top level modules:
+	FWD_UNIT
+
+} {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/MUX24.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/MUX24.v
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX24
+
+Top level modules:
+	MUX24
 
 } {} {}} C:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v {1 {vlog -work work -vopt -nocovercells C:/Users/Ganesh/Desktop/ARM_Processor/Counter2.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
